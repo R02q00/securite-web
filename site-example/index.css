@@ -1,0 +1,117 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+    height: 90vh;
+}
+.box1{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 50px 0 0 30px;
+}
+
+#sentence{
+    color: #fde047;
+    font-size: 38px;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style: none;
+    margin-left: 10px;
+}
+button{
+    border:  2px solid #fde047;
+    background: transparent;
+    height: 30px;
+    width: 35%;
+    border-radius: 8px;
+    margin: 15px 0 0 10px;
+    cursor: pointer;
+}
+button small{
+    font-size: 20px;padding-bottom: 5px;
+}
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #9ca3af;
+    width: 93%;
+    position: relative;
+    left: 50px;
+}
+footer h3{
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.box1 ul:nth-child(1),
+.box1 ul:nth-child(2),
+.box1 ul:nth-child(3),
+.box1 button,
+.box2 img,
+footer{
+    opacity: 0;
+    animation: showContent 0.6s 0.7s ease-in-out 1 forwards;
+}
+.box1 ul:nth-child(1){
+    animation-delay: 0.9s;
+}
+.box1 ul:nth-child(2){
+    animation-delay: 1.1s;
+}
+.box1 ul:nth-child(3){
+    animation-delay: 1.2s;
+}
+.box1 button, .box2 img{
+    animation-delay: 1.5s;
+}
+footer{
+    animation-delay: 1.7s;
+}
+@keyframes showContent {
+    from{
+        transform: translateY(50px);
+        filter: blur(30px);
+    }
+    to{
+        transform: translateY(0);
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+.box2,
+.spinner{
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin: auto;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+
+    -webkit-transform: rotateX(-10deg);
+    transform: rotateX(-10deg);
+}
+.box2 img{
+    position: relative;
+    top: -60px;
+}
+.ground{
+    width: 450px;
+    height: 450px;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%) rotateX(80deg);
+    transform: translate(-50%, -50%) rotateX(80deg);
+    background: -webkit-radial-gradient(center center, farthest-side, hsla(220, 9%, 46%, 0.7), transparent);
+}
